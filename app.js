@@ -27,8 +27,8 @@ const ARTWORKS = {
     {
       id: 'lukas-dunford',
       title: 'LUKAS DUNFORD',
-      year: '',
-      medium: '',
+      year: '2026',
+      medium: 'Oil on canvas, 43″ × 83″',
       image: 'images/canvas/lukas-dunford.jpg',
       images: []
     },
