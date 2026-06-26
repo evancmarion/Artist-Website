@@ -50,15 +50,15 @@ const ARTWORKS = {
       id: 'studio-interior',
       title: 'STUDIO INTERIOR',
       year: '',
-      medium: '',
+      medium: 'Oil on canvas, 30″ × 24″',
       image: 'images/canvas/studio-interior.jpg',
       images: []
     },
     {
       id: 'magnum-flitzum',
       title: 'MAGNUM FLITZUM',
-      year: '',
-      medium: '',
+      year: '2024',
+      medium: 'Oil on canvas, 18″ × 24″',
       image: 'images/canvas/magnum-flitzum.jpg',
       images: []
     }
@@ -68,17 +68,50 @@ const ARTWORKS = {
       id: 'david',
       title: 'DAVID',
       year: '',
-      medium: '',
-      image: 'images/space/david.jpg',
-      images: []
+      medium: 'Plywood, plaster',
+      dimensions: "8' H × 30' W × 60' D",
+      description: 'This work is about my dad. I had thought to describe him with concentric empty spaces of light. This was an instinct which I struggled to make sense of, both conceptually and practically. As the work unfolded, I began to more clearly how the spatial relationships informed the embedded meaning of the work, and vice versa. The final decision to install David in an empty parking lot connected the spaces within the objects and between the objects to the greater space which they occupied. This humanized what might have otherwise been a lot of plaster and pavement.',
+      image: 'images/space/david-1.jpg',
+      images: [
+        'images/space/david-1.jpg',
+        'images/space/david-2.jpg',
+        'images/space/david-3.jpg',
+        'images/space/david-4.jpg',
+        'images/space/david-5.jpg',
+        'images/space/david-6.jpg',
+        'images/space/david-7.jpg',
+        'images/space/david-8.jpg',
+        'images/space/david-9.jpg',
+        'images/space/david-10.jpg'
+      ]
     },
     {
       id: 'conetreal',
       title: 'CONETRÉAL',
       year: '',
-      medium: '',
-      image: 'images/space/conetreal.jpg',
-      images: []
+      medium: 'Fiberboard, enamel, gauze, LED',
+      dimensions: "9' H × 30' × 15' D",
+      description: [
+        'The name for Conetréal comes from a joke. "Cone Trial" was the title of the rough draft of the video documentation we passed around after the live performance. "Is that like cone-Montréal?" asked a friend, and the name stuck.',
+        'The work was as much about the small community around it as it was about the art itself. Through all stages of the process, people came together to keep it swimming in a way I had never experienced before. Concept workshopping, material sourcing, skills of dance, composition, and videography–not to mention last minute venue set up, and the number of people who just showed up to watch. I had not expected this to be so magical.',
+        'Content-wise, Conetréal began with a cone. I created the first sculpture (the middle cone with the band of vertical light) as a formal experiment in lighting. The character of that piece inspired the symbiotic development of the other two cones alongside a choreography of movement. Based on the way the performer was compelled to interact with the pieces, we developed a loose narrative of emergence, curiosity, play, and disappearance.'
+      ],
+      image: 'images/space/conetreal-1.jpg',
+      images: [
+        'images/space/conetreal-1.jpg',
+        'images/space/conetreal-2.jpg',
+        'images/space/conetreal-3.jpg',
+        'images/space/conetreal-4.jpg',
+        'images/space/conetreal-5.jpg',
+        'images/space/conetreal-6.jpg',
+        'images/space/conetreal-7.jpg',
+        'images/space/conetreal-8.jpg',
+        'images/space/conetreal-9.jpg',
+        'images/space/conetreal-10.jpg',
+        'images/space/conetreal-11.jpg',
+        'images/space/conetreal-12.jpg',
+        'images/space/conetreal-13.jpg'
+      ]
     }
   ],
   illustration: [
@@ -88,7 +121,24 @@ const ARTWORKS = {
       year: '',
       medium: '',
       image: 'images/illustration/cant-sell-culture.jpg',
-      images: []
+      images: [
+        'images/illustration/cant-sell-culture.jpg',
+        'images/illustration/cant-sell-culture-2.jpg',
+        'images/illustration/cant-sell-culture-3.jpg',
+        'images/illustration/cant-sell-culture-4.jpg',
+        'images/illustration/cant-sell-culture-5.jpg'
+      ]
+    },
+    {
+      id: 'the-dartmouth',
+      title: 'THE DARTMOUTH',
+      year: '',
+      medium: 'Ink on paper, 11″ × 17″',
+      image: 'images/illustration/the-dartmouth-1.jpg',
+      images: [
+        'images/illustration/the-dartmouth-1.jpg',
+        'images/illustration/the-dartmouth-2.jpg'
+      ]
     }
   ]
 };
@@ -127,13 +177,14 @@ function renderDetail(section, id) {
   }
 
   const sectionLabel = section.toUpperCase();
-  const meta = [work.year, work.medium].filter(Boolean);
+  const meta = [work.year, work.medium, work.dimensions].filter(Boolean);
   const allImages = work.images && work.images.length > 0 ? work.images : [work.image];
 
   return `
     <a href="#${section}" class="detail-back">← ${sectionLabel}</a>
     <div class="detail-title">${work.title}</div>
     ${meta.length ? `<div class="detail-meta">${meta.map(m => `<div>${m}</div>`).join('')}</div>` : ''}
+    ${work.description ? `<div class="detail-description">${(Array.isArray(work.description) ? work.description : [work.description]).map(p => `<p>${p}</p>`).join('')}</div>` : ''}
     <div class="detail-images">
       ${allImages.map(src => `<img src="${src}" alt="${work.title}" class="detail-image">`).join('')}
     </div>
@@ -163,6 +214,10 @@ function renderAbout() {
         <li class="exhibition-item">
           <span class="exhibition-year">2026</span>
           <span>Studio Art Senior Majors Exhibition, <em>Jaffe-Friede Gallery</em>, Hanover, NH</span>
+        </li>
+        <li class="exhibition-item">
+          <span class="exhibition-year">2026</span>
+          <span>Boats at Sea at Dawn, <em>Bragg Hill</em>, Norwich, VT</span>
         </li>
       </ul>
     </div>

@@ -147,6 +147,18 @@ nav {
   margin-bottom: 26px;
 }
 
+.detail-description {
+  font-size: 13.5px;
+  line-height: 1.78;
+  color: #333333;
+  max-width: 640px;
+  margin-bottom: 36px;
+}
+
+.detail-description p + p {
+  margin-top: 1.2em;
+}
+
 .detail-images {
   display: flex;
   flex-direction: column;
