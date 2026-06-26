@@ -19,8 +19,8 @@ const ARTWORKS = {
     {
       id: 'new-patek',
       title: 'NEW PATEK',
-      year: '',
-      medium: '',
+      year: '2026',
+      medium: 'Oil on canvas, 43″ × 60″',
       image: 'images/canvas/new-patek.jpg',
       images: []
     },
