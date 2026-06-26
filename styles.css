@@ -220,3 +220,82 @@ nav {
   flex-shrink: 0;
   min-width: 32px;
 }
+
+/* ---- RESPONSIVE ---- */
+
+/* Mobile: sidebar collapses to horizontal top bar, 1-column grid */
+@media (max-width: 767px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    border-right: none;
+    border-bottom: 1px solid #e8e8e8;
+    padding: 14px 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 10;
+    background: #ffffff;
+  }
+
+  .artist-name {
+    margin-bottom: 0;
+    line-height: 1.3;
+  }
+
+  nav {
+    flex-direction: row;
+    gap: 14px;
+  }
+
+  #content {
+    margin-left: 0;
+    padding: 72px 20px 60px 20px;
+  }
+
+  .gallery-grid,
+  .gallery-grid-2 {
+    grid-template-columns: 1fr;
+    column-gap: 0;
+    row-gap: 32px;
+  }
+
+  .detail-image {
+    max-width: 100%;
+  }
+
+  .detail-description,
+  .about-body {
+    max-width: 100%;
+  }
+}
+
+/* Small (640px+): 2-column grid while still in mobile nav mode */
+@media (min-width: 640px) and (max-width: 767px) {
+  .gallery-grid,
+  .gallery-grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 24px;
+  }
+}
+
+/* Tablet (768px+): sidebar visible, 2-column for 3-col grids */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .sidebar {
+    width: 140px;
+  }
+
+  #content {
+    margin-left: 140px;
+    padding: 30px 32px 80px 40px;
+  }
+
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+  }
+}
