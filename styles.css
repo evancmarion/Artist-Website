@@ -88,16 +88,14 @@ nav {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  column-gap: 52px;
-  row-gap: 48px;
+  gap: 24px;
   align-items: start;
 }
 
 .gallery-grid-2 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 52px;
-  row-gap: 48px;
+  gap: 24px;
   align-items: start;
 }
 
