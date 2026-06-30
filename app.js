@@ -239,6 +239,14 @@ function renderAbout() {
           <span class="exhibition-year">2026</span>
           <span>Artist-in-Residence, <em>Kumi Yamashita Studio</em>, Woodstock, NY</span>
         </li>
+        <li class="exhibition-item">
+          <span class="exhibition-year">2026</span>
+          <span>Robert Read Prize</span>
+        </li>
+        <li class="exhibition-item">
+          <span class="exhibition-year">2026</span>
+          <span>Davin Polk Fund for the Arts</span>
+        </li>
       </ul>
     </div>
     <div class="about-section">
