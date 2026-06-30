@@ -70,7 +70,7 @@ const ARTWORKS = {
       year: '2024',
       medium: 'Plywood, plaster',
       dimensions: "8' H × 30' W × 60' D",
-      description: 'This work is about my dad. I had thought to describe him with concentric empty spaces of light. This was an instinct which I struggled to make sense of, both conceptually and practically. As the work unfolded, I began to more clearly how the spatial relationships informed the embedded meaning of the work, and vice versa. The final decision to install David in an empty parking lot connected the spaces within the objects and between the objects to the greater space which they occupied. This humanized what might have otherwise been a lot of plaster and pavement.',
+      description: 'This work is about my dad. I had thought to describe him with concentric empty spaces of light. This was an instinct which I struggled to make sense of, both conceptually and practically. As the work unfolded, I began to more clearly see how the spatial relationships informed the embedded meaning of the work, and vice versa. The final decision to install David in an empty parking lot connected the spaces within the objects and between the objects to the greater space which they occupied. This humanized what might have otherwise been a lot of plaster and pavement.',
       image: 'images/space/david-1.jpg',
       images: [
         'images/space/david-1.jpg',
