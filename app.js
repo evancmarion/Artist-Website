@@ -67,7 +67,7 @@ const ARTWORKS = {
     {
       id: 'david',
       title: 'DAVID',
-      year: '',
+      year: '2024',
       medium: 'Plywood, plaster',
       dimensions: "8' H × 30' W × 60' D",
       description: 'This work is about my dad. I had thought to describe him with concentric empty spaces of light. This was an instinct which I struggled to make sense of, both conceptually and practically. As the work unfolded, I began to more clearly how the spatial relationships informed the embedded meaning of the work, and vice versa. The final decision to install David in an empty parking lot connected the spaces within the objects and between the objects to the greater space which they occupied. This humanized what might have otherwise been a lot of plaster and pavement.',
@@ -88,7 +88,7 @@ const ARTWORKS = {
     {
       id: 'conetreal',
       title: 'CONETRÉAL',
-      year: '',
+      year: '2024',
       medium: 'Fiberboard, enamel, gauze, LED',
       dimensions: "9' H × 30' × 15' D",
       description: [
@@ -159,12 +159,19 @@ function renderGalleryGrid(section, columns) {
   const works = ARTWORKS[section] || [];
   if (works.length === 0) return '';
   const gridClass = columns === 2 ? 'gallery-grid-2' : 'gallery-grid';
-  const items = works.map(work => `
+  const items = works.map(work => {
+    const hoverLines = [work.year, work.medium].filter(Boolean);
+    const hoverHTML = hoverLines.map(l => `<span>${l}</span>`).join('');
+    return `
     <a href="#${section}/${work.id}" class="gallery-item">
-      <img src="${work.image}" alt="${work.title}">
+      <div class="gallery-thumb">
+        <img src="${work.image}" alt="${work.title}">
+        <div class="gallery-hover">${hoverHTML}</div>
+      </div>
       <div class="gallery-caption">${work.title}</div>
     </a>
-  `).join('');
+  `;
+  }).join('');
   return `<div class="${gridClass}">${items}</div>`;
 }
 

@@ -1,3 +1,7 @@
+:root {
+  --cell-ratio: 1.045; /* New Patek bounding box (1280÷1225) — tune here to resize all cells */
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -103,10 +107,44 @@ nav {
   color: inherit;
 }
 
-.gallery-item img {
+.gallery-thumb {
+  position: relative;
   width: 100%;
-  height: auto;
-  display: block;
+  padding-top: calc(100% / var(--cell-ratio));
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.gallery-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom center;
+}
+
+.gallery-hover {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  opacity: 0;
+  transition: opacity 0.18s ease;
+  color: #000000;
+  font-size: 10.5px;
+  letter-spacing: 0.08em;
+  text-align: center;
+  padding: 12px;
+}
+
+.gallery-item:hover .gallery-hover {
+  opacity: 1;
 }
 
 .gallery-caption {
