@@ -126,7 +126,8 @@ const ARTWORKS = {
         'images/illustration/cant-sell-culture-2.jpg',
         'images/illustration/cant-sell-culture-3.jpg',
         'images/illustration/cant-sell-culture-4.jpg',
-        'images/illustration/cant-sell-culture-5.jpg'
+        'images/illustration/cant-sell-culture-5.jpg',
+        'images/illustration/cant-sell-culture-6.png'
       ]
     },
     {
