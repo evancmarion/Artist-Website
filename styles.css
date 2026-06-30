@@ -421,6 +421,10 @@ nav {
     margin-top: 20px;
   }
 
+  .detail-mini-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .detail-image {
     max-width: 100%;
   }

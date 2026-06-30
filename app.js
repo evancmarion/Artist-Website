@@ -192,7 +192,12 @@ function renderDetail(section, id) {
   const multiImage = allImages.length > 1;
   const imagesHTML = multiImage
     ? `<div class="detail-mini-grid">
-        ${allImages.map((src, i) => `${i === 0 ? '<div class="mini-label">Monthly</div>' : ''}${i === 2 ? '<div class="mini-label">Termly</div>' : ''}<img src="${src}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`).join('')}
+        ${allImages.map((src, i) => {
+          const labels = work.id === 'cant-sell-culture'
+            ? (i === 0 ? '<div class="mini-label">Monthly</div>' : i === 2 ? '<div class="mini-label">Termly</div>' : '')
+            : '';
+          return `${labels}<img src="${src}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`;
+        }).join('')}
        </div>
        <div class="lightbox" id="lightbox">
          <div class="lightbox-main">
