@@ -373,6 +373,11 @@ nav {
 
 /* Mobile: sidebar collapses to horizontal top bar, 1-column grid */
 @media (max-width: 767px) {
+  .artist-name,
+  .nav-link {
+    font-size: 12px;
+  }
+
   .sidebar {
     position: fixed;
     top: 0;
@@ -410,6 +415,10 @@ nav {
     grid-template-columns: 1fr;
     column-gap: 0;
     row-gap: 32px;
+  }
+
+  .detail-back {
+    margin-top: 20px;
   }
 
   .detail-image {
