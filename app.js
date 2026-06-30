@@ -127,7 +127,8 @@ const ARTWORKS = {
         'images/illustration/cant-sell-culture-3.jpg',
         'images/illustration/cant-sell-culture-4.jpg',
         'images/illustration/cant-sell-culture-5.jpg',
-        'images/illustration/cant-sell-culture-6.png'
+        'images/illustration/cant-sell-culture-6.png',
+        'images/illustration/cant-sell-culture-7.jpg'
       ]
     },
     {
@@ -188,14 +189,29 @@ function renderDetail(section, id) {
   const meta = [work.year, work.medium, work.dimensions].filter(Boolean);
   const allImages = work.images && work.images.length > 0 ? work.images : [work.image];
 
+  const multiImage = allImages.length > 1;
+  const imagesHTML = multiImage
+    ? `<div class="detail-mini-grid">
+        ${allImages.map((src, i) => `<img src="${src}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`).join('')}
+       </div>
+       <div class="lightbox" id="lightbox">
+         <div class="lightbox-main">
+           <img src="" id="lightbox-img" class="lightbox-img">
+         </div>
+         <div class="lightbox-strip" id="lightbox-strip">
+           ${allImages.map((src, i) => `<img src="${src}" class="strip-thumb" data-index="${i}">`).join('')}
+         </div>
+       </div>`
+    : `<div class="detail-images">
+        <img src="${allImages[0]}" alt="${work.title}" class="detail-image">
+       </div>`;
+
   return `
     <a href="#${section}" class="detail-back">← ${sectionLabel}</a>
     <div class="detail-title">${work.title}</div>
     ${meta.length ? `<div class="detail-meta">${meta.map(m => `<div>${m}</div>`).join('')}</div>` : ''}
     ${work.description ? `<div class="detail-description">${(Array.isArray(work.description) ? work.description : [work.description]).map(p => `<p>${p}</p>`).join('')}</div>` : ''}
-    <div class="detail-images">
-      ${allImages.map(src => `<img src="${src}" alt="${work.title}" class="detail-image">`).join('')}
-    </div>
+    ${imagesHTML}
   `;
 }
 
@@ -242,6 +258,39 @@ function renderSection(section) {
   }
 }
 
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+  const lightboxImg = document.getElementById('lightbox-img');
+  const strip = document.getElementById('lightbox-strip');
+  const stripThumbs = Array.from(strip.querySelectorAll('.strip-thumb'));
+  const miniThumbs = Array.from(document.querySelectorAll('.mini-thumb'));
+
+  function openAt(index) {
+    const src = miniThumbs[index].dataset.full;
+    lightboxImg.src = src;
+    lightbox.classList.add('active');
+    stripThumbs.forEach((t, i) => t.classList.toggle('strip-active', i === index));
+    stripThumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+  }
+
+  miniThumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', () => openAt(i));
+  });
+
+  stripThumbs.forEach((thumb, i) => {
+    thumb.addEventListener('click', e => {
+      e.stopPropagation();
+      openAt(i);
+    });
+  });
+
+  lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
+
+  lightboxImg.addEventListener('click', e => e.stopPropagation());
+  strip.addEventListener('click', e => e.stopPropagation());
+}
+
 function render() {
   const { section, id } = getRoute();
   const content = document.getElementById('content');
@@ -250,12 +299,20 @@ function render() {
 
   if (id) {
     content.innerHTML = renderDetail(section, id);
+    initLightbox();
   } else {
     content.innerHTML = renderSection(section);
   }
 
   window.scrollTo(0, 0);
 }
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') {
+    const lb = document.getElementById('lightbox');
+    if (lb) lb.classList.remove('active');
+  }
+});
 
 window.addEventListener('hashchange', render);
 window.addEventListener('load', render);
