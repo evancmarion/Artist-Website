@@ -247,6 +247,10 @@ function renderAbout() {
           <span class="exhibition-year">2026</span>
           <span>Davin Polk Fund for the Arts</span>
         </li>
+        <li class="exhibition-item">
+          <span class="exhibition-year">2025</span>
+          <span>Leslie Center for the Humanities Student Research Fellowship</span>
+        </li>
       </ul>
     </div>
     <div class="about-section">
