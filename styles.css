@@ -37,7 +37,7 @@ img {
   left: 0;
   width: 140px;
   height: 100vh;
-  border-right: 1px solid #e8e8e8;
+  border-right: none;
   padding: 28px 14px 28px 26px;
   display: flex;
   flex-direction: column;
