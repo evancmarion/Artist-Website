@@ -233,12 +233,17 @@ function renderAbout() {
       <div class="about-contact"><a href="https://www.instagram.com/evanmarionluces" target="_blank">@evanmarionluces</a></div>
     </div>
     <div class="about-section">
-      <div class="about-section-heading">SELECTED EXHIBITIONS</div>
+      <div class="about-section-heading">AWARDS & RECOGNITION</div>
       <ul class="exhibitions-list">
         <li class="exhibition-item">
           <span class="exhibition-year">2026</span>
           <span>Artist-in-Residence, <em>Kumi Yamashita Studio</em>, Woodstock, NY</span>
         </li>
+      </ul>
+    </div>
+    <div class="about-section">
+      <div class="about-section-heading">SELECTED EXHIBITIONS</div>
+      <ul class="exhibitions-list">
         <li class="exhibition-item">
           <span class="exhibition-year">2026</span>
           <span>ArtPrize, <em>Cura Contemporary</em>, Grand Rapids, MI (forthcoming)</span>
