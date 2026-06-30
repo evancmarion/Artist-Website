@@ -226,6 +226,10 @@ nav {
   transition: opacity 0.15s;
 }
 
+.mini-thumb:nth-child(3) {
+  grid-column: 1;
+}
+
 .mini-thumb:hover {
   opacity: 0.75;
 }
