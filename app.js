@@ -205,7 +205,7 @@ function renderGalleryGrid(section, columns) {
     return `
     <a href="#${section}/${work.id}" class="gallery-item">
       <div class="gallery-thumb">
-        <img src="${work.image}" alt="${work.title}">
+        <img src="${work.image}" alt="${work.title}" loading="lazy">
       </div>
       <div class="gallery-caption">${work.title}</div>
     </a>
