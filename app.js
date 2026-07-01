@@ -202,13 +202,10 @@ function renderGalleryGrid(section, columns) {
   if (works.length === 0) return '';
   const gridClass = columns === 2 ? 'gallery-grid-2' : 'gallery-grid';
   const items = works.map(work => {
-    const hoverLines = [work.year, work.medium].filter(Boolean);
-    const hoverHTML = hoverLines.map(l => `<span>${l}</span>`).join('');
     return `
     <a href="#${section}/${work.id}" class="gallery-item">
       <div class="gallery-thumb">
         <img src="${work.image}" alt="${work.title}">
-        <div class="gallery-hover">${hoverHTML}</div>
       </div>
       <div class="gallery-caption">${work.title}</div>
     </a>

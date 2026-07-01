@@ -121,34 +121,11 @@ nav {
   height: 100%;
   object-fit: contain;
   object-position: center;
+  transition: transform 0.25s ease;
 }
 
-.gallery-hover {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.6);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  opacity: 0;
-  transition: opacity 0.18s ease;
-  color: #000000;
-  font-size: 14.5px;
-  letter-spacing: 0.08em;
-  text-align: center;
-  text-transform: uppercase;
-  padding: 12px;
-}
-
-.gallery-hover span {
-  max-width: 60%;
-  word-wrap: break-word;
-}
-
-.gallery-item:hover .gallery-hover {
-  opacity: 1;
+.gallery-item:hover .gallery-thumb img {
+  transform: scale(1.1);
 }
 
 .gallery-caption {
