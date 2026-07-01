@@ -1,6 +1,46 @@
 const ARTWORKS = {
   canvas: [
     {
+      id: 'yellow',
+      title: 'YELLOW',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      image: 'images/canvas/yellow.png',
+      images: []
+    },
+    {
+      id: 'gigi-and-bella',
+      title: 'GIGI AND BELLA (BELLA AND GIGI)',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      image: 'images/canvas/gigi-and-bella.png',
+      images: []
+    },
+    {
+      id: 'untitled-02',
+      title: 'UNTITLED 02',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      image: 'images/canvas/untitled-02.png',
+      images: []
+    },
+    {
+      id: 'untitled-01',
+      title: 'UNTITLED 01',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      image: 'images/canvas/untitled-01.png',
+      images: []
+    },
+    {
+      id: 'zoom-call',
+      title: 'ZOOM CALL',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      image: 'images/canvas/zoom-call.png',
+      images: []
+    },
+    {
       id: 'canvas-colored-painting-ii',
       title: 'CANVAS COLORED PAINTING II',
       year: '2026',
