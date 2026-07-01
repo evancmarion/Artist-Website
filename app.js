@@ -75,7 +75,7 @@ const ARTWORKS = {
     {
       id: 'canvas-colored-painting',
       title: 'CANVAS COLORED PAINTING',
-      year: '',
+      year: '2025',
       medium: 'Oil and charcoal on canvas, 36″ × 38″',
       image: 'images/canvas/canvas-colored-painting-1.jpg',
       images: [
