@@ -4,7 +4,7 @@ const ARTWORKS = {
       id: 'yellow',
       title: 'YELLOW',
       year: '2026',
-      medium: 'Oil and chalk on canvas',
+      medium: 'Oil and chalk on canvas, 67.5″ × 24″',
       image: 'images/canvas/yellow.png',
       images: []
     },
