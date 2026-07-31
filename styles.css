@@ -451,20 +451,29 @@ nav {
   height: auto;
 }
 
-/* Single row of thumbnails, same height as the hero */
+/* Justified row of thumbnails — same height, ends flush with the hero */
 .detail-mini-row {
   display: flex;
   gap: 12px;
-  margin-top: 24px;
-  overflow-x: auto;
-  aspect-ratio: 214 / 59;
 }
 .detail-mini-row .mini-thumb {
-  height: 100%;
-  width: auto;
-  max-width: none;
-  aspect-ratio: auto;
-  object-fit: contain;
-  flex-shrink: 0;
+  flex: 1 1 0%;
+  width: 0;
+  min-width: 0;
+  height: auto;
   cursor: pointer;
+}
+
+/* Breathing room around the blurb */
+.detail-description {
+  margin-top: 48px;
+  margin-bottom: 48px;
+}
+
+/* Let text stretch to full page width, site-wide */
+.detail-description,
+.detail-meta,
+.about-body,
+.about-section {
+  max-width: none;
 }
