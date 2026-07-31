@@ -451,15 +451,16 @@ nav {
   height: auto;
 }
 
-/* Single row of constant-height thumbnails */
+/* Single row of thumbnails, same height as the hero */
 .detail-mini-row {
   display: flex;
   gap: 12px;
   margin-top: 24px;
   overflow-x: auto;
+  aspect-ratio: 214 / 59;
 }
 .detail-mini-row .mini-thumb {
-  height: 160px;
+  height: 100%;
   width: auto;
   flex-shrink: 0;
   cursor: pointer;
