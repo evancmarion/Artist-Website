@@ -251,8 +251,8 @@ function renderDetail(section, id) {
   return `
     <a href="#${section}" class="detail-back">← ${sectionLabel}</a>
     <div class="detail-title">${work.title}</div>
-    ${meta.length ? `<div class="detail-meta">${meta.map(m => `<div>${m}</div>`).join('')}</div>` : ''}
-    ${work.description ? `<div class="detail-description">${(Array.isArray(work.description) ? work.description : [work.description]).map(p => `<p>${p}</p>`).join('')}</div>` : ''}
+        ${meta.length ? `<div class="detail-meta">${meta.map(m => `<div>${m}</div>`).join('')}</div>` : ''}
+       ${work.description ? `<div class="detail-description">${(Array.isArray(work.description) ? work.description : [work.description]).map(p => `<p>${p}</p>`).join('')}</div>` : ''}
     ${imagesHTML}
   `;
 }
