@@ -393,9 +393,10 @@ function render() {
 
   setActiveNav(section);
 
-  if (id) {
+    if (id) {
     content.innerHTML = renderDetail(section, id);
     initLightbox();
+    justifyMiniRow();
   } else {
     content.innerHTML = renderSection(section);
   }
