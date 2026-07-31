@@ -462,6 +462,9 @@ nav {
 .detail-mini-row .mini-thumb {
   height: 100%;
   width: auto;
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: contain;
   flex-shrink: 0;
   cursor: pointer;
 }
