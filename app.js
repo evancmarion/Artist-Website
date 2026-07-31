@@ -104,6 +104,23 @@ const ARTWORKS = {
     }
   ],
   space: [
+        {
+      id: 'study-in-gentle-composition',
+      title: 'STUDY IN GENTLE COMPOSITION',
+      year: '2026',
+      medium: 'Oil and chalk on canvas',
+      dimensions: '214″ × 59″',
+      description: 'This was a deeper study in composing with weighted probability. I understood it was necessary to handle the initial chance markmaking very gently in order to preserve the balance of the ecosystem. However, this presented an issue. It became difficult to continue the work at all, as typical means of intervening (i.e. adding more marks) would smother the original. Direct intentionality was inevitably dissonant with weighted probability. I navigated this by developing the work along a different axis, editing the canvas itself to refine compositions while keeping their surface undisturbed. This process produced the works below.',
+      image: 'images/canvas/big-painting.webp',
+      heroImage: 'images/canvas/big-painting.webp',
+      images: [
+        'images/canvas/zoom-call.webp',
+        'images/canvas/yellow.webp',
+        'images/canvas/untitled-01.webp',
+        'images/canvas/untitled-02.webp',
+        'images/canvas/gigi-and-bella.webp'
+      ]
+    },
     {
       id: 'david',
       title: 'DAVID',
