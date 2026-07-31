@@ -441,3 +441,26 @@ nav {
     column-gap: 32px;
   }
 }
+/* Hero image on detail pages */
+.detail-hero {
+  margin: 24px 0;
+}
+.detail-hero img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* Single row of constant-height thumbnails */
+.detail-mini-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  overflow-x: auto;
+}
+.detail-mini-row .mini-thumb {
+  height: 160px;
+  width: auto;
+  flex-shrink: 0;
+  cursor: pointer;
+}
