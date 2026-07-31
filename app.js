@@ -377,6 +377,16 @@ function initLightbox() {
   strip.addEventListener('click', e => e.stopPropagation());
 }
 
+function justifyMiniRow() {
+  const row = document.querySelector('.detail-mini-row');
+  if (!row) return;
+  row.querySelectorAll('.mini-thumb').forEach(img => {
+    const apply = () => { img.style.flexGrow = img.naturalWidth / img.naturalHeight; };
+    if (img.complete) apply();
+    else img.addEventListener('load', apply);
+  });
+}
+
 function render() {
   const { section, id } = getRoute();
   const content = document.getElementById('content');
