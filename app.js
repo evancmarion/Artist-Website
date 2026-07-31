@@ -238,6 +238,43 @@ function renderDetail(section, id) {
     window.location.hash = section;
     return '';
   }
+  const sectionLabel = section.toUpperCase();
+  const meta = [work.year, work.medium, work.dimensions].filter(Boolean);
+  const allImages = work.images && work.images.length > 0 ? work.images : [work.image];
+  const multiImage = allImages.length > 1;
+  const gridClass = work.heroImage ? 'detail-mini-row' : 'detail-mini-grid';
+  const imagesHTML = multiImage
+    ? `<div class="${gridClass}">
+        ${allImages.map((src, i) => {
+          const labels = work.id === 'cant-sell-culture'
+            ? (i === 0 ? '<div class="mini-label">Monthly</div>' : i === 2 ? '<div class="mini-label">Termly</div>' : '')
+            : '';
+          return `${labels}<img src="${src}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`;
+        }).join('')}
+       </div>
+       <div class="lightbox" id="lightbox">
+         <div class="lightbox-main">
+           <img src="" id="lightbox-img" class="lightbox-img">
+         </div>
+         <div class="lightbox-strip" id="lightbox-strip">
+           ${allImages.map((src, i) => `<img src="${src}" class="strip-thumb" data-index="${i}">`).join('')}
+         </div>
+       </div>`
+    : `<div class="detail-images">
+        <img src="${allImages[0]}" alt="${work.title}" class="detail-image">
+       </div>`;
+  const heroHTML = work.heroImage
+    ? `<div class="detail-hero"><img src="${work.heroImage}" alt="${work.title}"></div>`
+    : '';
+  return `
+    <a href="#${section}" class="detail-back">← ${sectionLabel}</a>
+    <div class="detail-title">${work.title}</div>
+    ${meta.length ? `<div class="detail-meta">${meta.map(m => `<div>${m}</div>`).join('')}</div>` : ''}
+    ${heroHTML}
+    ${work.description ? `<div class="detail-description">${(Array.isArray(work.description) ? work.description : [work.description]).map(p => `<p>${p}</p>`).join('')}</div>` : ''}
+    ${imagesHTML}
+  `;
+}
 
   const sectionLabel = section.toUpperCase();
   const meta = [work.year, work.medium, work.dimensions].filter(Boolean);
