@@ -109,7 +109,7 @@ nav {
   position: relative;
   width: 100%;
   padding-top: calc(100% / var(--cell-ratio));
-  background: hotpink;
+  background: #ffffff;
   overflow: hidden;
 }
 
