@@ -89,7 +89,7 @@ const ARTWORKS = {
     {
       id: 'studio-interior',
       title: 'STUDIO INTERIOR',
-      year: '',
+      year: '2025',
       medium: 'Oil on canvas, 30″ × 24″',
       image: 'images/canvas/studio-interior.webp',
       images: []
