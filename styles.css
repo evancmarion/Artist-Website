@@ -451,16 +451,18 @@ nav {
   height: auto;
 }
 
-/* Justified row of thumbnails — same height, ends flush with the hero */
+/* Row of thumbnails: natural proportions, equal heights, flush ends */
 .detail-mini-row {
   display: flex;
-  gap: 12px;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 .detail-mini-row .mini-thumb {
-  flex: 1 1 0%;
-  width: 0;
-  min-width: 0;
-  height: auto;
+  flex: none;
+  width: auto;
+  max-width: none;
+  aspect-ratio: auto;
+  object-fit: contain;
   cursor: pointer;
 }
 
