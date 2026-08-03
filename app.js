@@ -377,14 +377,32 @@ function initLightbox() {
   strip.addEventListener('click', e => e.stopPropagation());
 }
 
+let miniRowResizeHandler = null;
 function justifyMiniRow() {
+  if (miniRowResizeHandler) {
+    window.removeEventListener('resize', miniRowResizeHandler);
+    miniRowResizeHandler = null;
+  }
   const row = document.querySelector('.detail-mini-row');
   if (!row) return;
-  row.querySelectorAll('.mini-thumb').forEach(img => {
-    const apply = () => { img.style.flexGrow = img.naturalWidth / img.naturalHeight; };
-    if (img.complete) apply();
-    else img.addEventListener('load', apply);
+  const imgs = Array.from(row.querySelectorAll('.mini-thumb'));
+  const MIN_GAP = 16;
+  function layout() {
+    if (!imgs.every(img => img.complete && img.naturalWidth)) return;
+    const W = row.clientWidth;
+    const S = imgs.reduce((sum, img) => sum + img.naturalWidth / img.naturalHeight, 0);
+    const h = (W - MIN_GAP * (imgs.length - 1)) / S;
+    imgs.forEach(img => {
+      img.style.height = h + 'px';
+      img.style.width = 'auto';
+    });
+  }
+  imgs.forEach(img => {
+    if (!img.complete) img.addEventListener('load', layout);
   });
+  layout();
+  miniRowResizeHandler = layout;
+  window.addEventListener('resize', layout);
 }
 
 function render() {
