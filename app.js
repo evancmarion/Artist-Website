@@ -249,6 +249,7 @@ function renderDetail(section, id) {
   const sectionLabel = section.toUpperCase();
   const meta = [work.year, work.medium, work.dimensions].filter(Boolean);
   const allImages = work.images && work.images.length > 0 ? work.images : [work.image];
+  const thumbImages = work.thumbs && work.thumbs.length === allImages.length ? work.thumbs : allImages;
   const multiImage = allImages.length > 1;
   const gridClass = work.heroImage ? 'detail-mini-row' : 'detail-mini-grid';
   const imagesHTML = multiImage
@@ -257,7 +258,7 @@ function renderDetail(section, id) {
           const labels = work.id === 'cant-sell-culture'
             ? (i === 0 ? '<div class="mini-label">Monthly</div>' : i === 2 ? '<div class="mini-label">Termly</div>' : '')
             : '';
-          return `${labels}<img src="${src}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`;
+          return `${labels}<img src="${thumbImages[i]}" alt="${work.title}" class="mini-thumb" data-index="${i}" data-full="${src}">`;
         }).join('')}
        </div>
        <div class="lightbox" id="lightbox">
@@ -265,7 +266,7 @@ function renderDetail(section, id) {
            <img src="" id="lightbox-img" class="lightbox-img">
          </div>
          <div class="lightbox-strip" id="lightbox-strip">
-           ${allImages.map((src, i) => `<img src="${src}" class="strip-thumb" data-index="${i}">`).join('')}
+           ${allImages.map((src, i) => `<img src="${thumbImages[i]}" class="strip-thumb" data-index="${i}">`).join('')}
          </div>
        </div>`
     : `<div class="detail-images">
