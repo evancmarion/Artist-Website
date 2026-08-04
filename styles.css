@@ -479,3 +479,12 @@ nav {
 .about-section {
   max-width: none;
 }
+
+.detail-mini-row .mini-thumb {
+  height: 120px;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.detail-mini-row.row-ready .mini-thumb {
+  opacity: 1;
+}
