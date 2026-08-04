@@ -387,18 +387,30 @@ function justifyMiniRow() {
   if (!row) return;
   const imgs = Array.from(row.querySelectorAll('.mini-thumb'));
   const MIN_GAP = 48;
+  function ready(img) {
+    return img.complete && img.naturalWidth > 0;
+  }
   function layout() {
-    if (!imgs.every(img => img.complete && img.naturalWidth)) return;
+    const loaded = imgs.filter(ready);
+    if (loaded.length === 0) return;
+    if (loaded.length < imgs.length) return;
     const W = row.clientWidth;
-    const S = imgs.reduce((sum, img) => sum + img.naturalWidth / img.naturalHeight, 0);
-    const h = (W - MIN_GAP * (imgs.length - 1)) / S;
-    imgs.forEach(img => {
+    const S = loaded.reduce((sum, img) => sum + img.naturalWidth / img.naturalHeight, 0);
+    const h = (W - MIN_GAP * (loaded.length - 1)) / S;
+    loaded.forEach(img => {
       img.style.height = h + 'px';
       img.style.width = 'auto';
     });
+    row.classList.add('row-ready');
   }
   imgs.forEach(img => {
-    if (!img.complete) img.addEventListener('load', layout);
+    img.addEventListener('load', layout);
+    img.addEventListener('error', () => {
+      img.remove();
+      const idx = imgs.indexOf(img);
+      if (idx > -1) imgs.splice(idx, 1);
+      layout();
+    });
   });
   layout();
   miniRowResizeHandler = layout;
