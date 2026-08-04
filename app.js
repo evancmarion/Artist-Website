@@ -119,7 +119,15 @@ const ARTWORKS = {
         'images/canvas/untitled-01.webp',
         'images/canvas/untitled-02.webp',
         'images/canvas/gigi-and-bella.webp'
+      ],
+      thumbs: [
+        'images/canvas/zoom-call-thumb.webp',
+        'images/canvas/yellow-thumb.webp',
+        'images/canvas/untitled-01-thumb.webp',
+        'images/canvas/untitled-02-thumb.webp',
+        'images/canvas/gigi-and-bella-thumb.webp'
       ]
+    },
     },
     {
       id: 'david',
