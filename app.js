@@ -128,7 +128,6 @@ const ARTWORKS = {
         'images/canvas/gigi-and-bella-thumb.webp'
       ]
     },
-    },
     {
       id: 'david',
       title: 'DAVID',
