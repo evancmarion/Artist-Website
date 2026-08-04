@@ -386,7 +386,7 @@ function justifyMiniRow() {
   const row = document.querySelector('.detail-mini-row');
   if (!row) return;
   const imgs = Array.from(row.querySelectorAll('.mini-thumb'));
-  const MIN_GAP = 16;
+  const MIN_GAP = 48;
   function layout() {
     if (!imgs.every(img => img.complete && img.naturalWidth)) return;
     const W = row.clientWidth;
