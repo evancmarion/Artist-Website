@@ -425,29 +425,26 @@ function justifyMiniRow() {
   window.addEventListener('resize', layout);
 }
 
+let gridScroll = 0;
+
 function render() {
   const { section, id } = getRoute();
   const content = document.getElementById('content');
 
   setActiveNav(section);
 
-    if (id) {
+  if (id) {
+    gridScroll = window.scrollY;
     content.innerHTML = renderDetail(section, id);
     initLightbox();
     justifyMiniRow();
+    window.scrollTo(0, 0);
   } else {
     content.innerHTML = renderSection(section);
+    window.scrollTo(0, gridScroll);
+    gridScroll = 0;
   }
-
-  window.scrollTo(0, 0);
 }
-
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') {
-    const lb = document.getElementById('lightbox');
-    if (lb) lb.classList.remove('active');
-  }
-});
 
 window.addEventListener('hashchange', render);
 window.addEventListener('load', render);
