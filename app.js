@@ -393,11 +393,20 @@ function justifyMiniRow() {
   }
   const row = document.querySelector('.detail-mini-row');
   if (!row) return;
-  const imgs = Array.from(row.querySelectorAll('.mini-thumb'));
+
+  let imgs = Array.from(row.querySelectorAll('.mini-thumb'));
+
+  imgs = imgs.filter(img => {
+    if (img.complete && img.naturalWidth === 0) {
+      img.remove();
+      return false;
+    }
+    return true;
+  });
+  if (imgs.length === 0) return;
+
   const MIN_GAP = 60;
-  function ready(img) {
-    return img.complete && img.naturalWidth > 0;
-  }
+}
   function layout() {
     const loaded = imgs.filter(ready);
     if (loaded.length === 0) return;
