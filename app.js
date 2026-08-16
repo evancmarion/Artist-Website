@@ -408,7 +408,7 @@ function justifyMiniRow() {
   if (imgs.length === 0) return;
 
   const MIN_GAP = 60;
-}
+  
   function layout() {
     const loaded = imgs.filter(ready);
     if (loaded.length === 0) return;
