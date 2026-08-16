@@ -111,7 +111,7 @@ const ARTWORKS = {
       medium: 'Oil and chalk on canvas',
       dimensions: '214″ × 59″',
       description: [
-        'Here I learned how to better work with delicate marks and relationships. I began the process with the large format painting, shown at Boats at Sea at Dawn. Afterwards, I wanted to continue developing the work, but without smothering the original composition.'
+        'Here I learned how to better work with delicate marks and relationships. I began the process with the large format painting, shown at Boats at Sea at Dawn. Afterwards, I wanted to continue developing the work, but without smothering the original composition.',
         'I navigated this by developing the work along a different axis, editing the canvas itself to refine compositions while keeping their surface undisturbed. This process produced the works below. ',
         ],
       image: 'images/canvas/big-painting.webp',
