@@ -367,7 +367,7 @@ function initLightbox() {
   const lightboxImg = document.getElementById('lightbox-img');
   const strip = document.getElementById('lightbox-strip');
   const stripThumbs = strip ? Array.from(strip.querySelectorAll('.strip-thumb')) : [];
-  const miniThumbs = Array.from(document.querySelectorAll('.mini-thumb'));
+ const miniThumbs = Array.from(document.querySelectorAll('[data-full]'));
 
   function openAt(index) {
     const src = miniThumbs[index].dataset.full;
