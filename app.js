@@ -273,7 +273,12 @@ function renderDetail(section, id) {
          </div>
        </div>`
     : `<div class="detail-images">
-        <img src="${allImages[0]}" alt="${work.title}" class="detail-image">
+        <img src="${allImages[0]}" alt="${work.title}" class="detail-image mini-thumb" data-index="0" data-full="${allImages[0]}">
+       </div>
+       <div class="lightbox" id="lightbox">
+         <div class="lightbox-main">
+           <img src="" id="lightbox-img" class="lightbox-img">
+         </div>
        </div>`;
   const heroHTML = work.heroImage
     ? `<div class="detail-hero"><img src="${work.heroImage}" alt="${work.title}"></div>`
