@@ -86,6 +86,7 @@ const ARTWORKS = {
         'images/canvas/canvas-colored-painting-5.webp'
       ]
     },
+    /*
     {
       id: 'studio-interior',
       title: 'STUDIO INTERIOR',
@@ -102,6 +103,7 @@ const ARTWORKS = {
       image: 'images/canvas/magnum-flitzum.webp',
       images: []
     }
+    */
   ],
   space: [
         {
