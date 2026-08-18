@@ -190,7 +190,10 @@ nav {
 
 .detail-image {
   max-width: 700px;
-  width: 100%;
+  max-height: 80vh;
+  width: auto;
+  height: auto;
+  cursor: zoom-in;
 }
 
 /* ---- DETAIL MINI GRID ---- */
