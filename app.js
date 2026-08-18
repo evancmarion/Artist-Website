@@ -419,6 +419,7 @@ function justifyMiniRow() {
     if (loaded.length < imgs.length) return;
     const W = row.clientWidth;
     const S = loaded.reduce((sum, img) => sum + img.naturalWidth / img.naturalHeight, 0);
+    if (S === 0) return;
     const h = (W - MIN_GAP * (loaded.length - 1)) / S;
     loaded.forEach(img => {
       img.style.height = h + 'px';
