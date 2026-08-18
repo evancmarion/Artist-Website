@@ -273,7 +273,7 @@ function renderDetail(section, id) {
          </div>
        </div>`
     : `<div class="detail-images">
-        <img src="${allImages[0]}" alt="${work.title}" class="detail-image mini-thumb" data-index="0" data-full="${allImages[0]}">
+        <img src="${allImages[0]}" alt="${work.title}" class="detail-image" data-index="0" data-full="${allImages[0]}">
        </div>
        <div class="lightbox" id="lightbox">
          <div class="lightbox-main">
