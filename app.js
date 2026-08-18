@@ -366,15 +366,17 @@ function initLightbox() {
   if (!lightbox) return;
   const lightboxImg = document.getElementById('lightbox-img');
   const strip = document.getElementById('lightbox-strip');
-  const stripThumbs = Array.from(strip.querySelectorAll('.strip-thumb'));
+  const stripThumbs = strip ? Array.from(strip.querySelectorAll('.strip-thumb')) : [];
   const miniThumbs = Array.from(document.querySelectorAll('.mini-thumb'));
 
   function openAt(index) {
     const src = miniThumbs[index].dataset.full;
     lightboxImg.src = src;
     lightbox.classList.add('active');
-    stripThumbs.forEach((t, i) => t.classList.toggle('strip-active', i === index));
-    stripThumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    if (stripThumbs.length) {
+      stripThumbs.forEach((t, i) => t.classList.toggle('strip-active', i === index));
+      stripThumbs[index].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
   }
 
   miniThumbs.forEach((thumb, i) => {
@@ -389,9 +391,8 @@ function initLightbox() {
   });
 
   lightbox.addEventListener('click', () => lightbox.classList.remove('active'));
-
   lightboxImg.addEventListener('click', e => e.stopPropagation());
-  strip.addEventListener('click', e => e.stopPropagation());
+  if (strip) strip.addEventListener('click', e => e.stopPropagation());
 }
 
 let miniRowResizeHandler = null;
